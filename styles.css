@@ -1,0 +1,154 @@
+
+
+body{
+    background-color: rgb(145, 66, 218);
+    font-family: sans-serif;
+}
+
+.scrolling-text {
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    animation-name: down;
+    animation-duration: 2.5s;
+    margin-top: 60px;
+}
+
+p {
+    color: antiquewhite;
+}
+
+h2 {
+    color: rgb(236, 141, 72);
+    text-shadow: 0.7px 0.7px brown;
+}
+
+@keyframes down {
+    from   {top:-70px;}
+    to  {top:0px;}
+  }
+
+.scrolling-text > h1 {
+    font-size: 50px;
+    animation-name: h1;
+    animation-duration: 2s;
+}
+
+@keyframes h1 {
+    from   {color:chocolate;}
+    to  {}
+}
+
+.cards {
+    display: flex;
+    margin-top: 150px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.bounce-box, .rotating-card, .color-change {
+    background-color: rgb(169, 90, 243);
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bounce-box {
+    animation-name: bounce;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes bounce {
+    0% { top: -20px; }
+    50% { top: 20px; }
+    100% { top: -20px; }
+}
+
+.rotating-card {
+    animation-name: rotate;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+  
+@keyframes rotate {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+
+}
+
+.color-change {
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes change {
+    from   {background-color:rgb(150, 52, 225);}
+    to  {background-color:rgb(192, 119, 237);}
+  }
+
+  .color-change:hover, .rotating-card:hover, .bounce-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .color-change:hover {
+   transform: scale(1.05, 1.05);
+   animation-name: rotate-change;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+}
+
+@keyframes rotate-change {
+ 0% {
+     transform: rotate(0deg);
+ }
+
+ 100% {
+     transform: rotate(5deg);
+ }
+
+}
+
+.purple {
+    background-color: rgb(153, 84, 217);
+    width: 100%;
+    height: 220px;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(73, 1, 141);
+    padding: 5px;
+}
+
+@media (max-width: 768px)
+{
+    .cards {
+         display: flex;
+         flex-direction: column;
+    }
+
+    .bounce-box, .rotating-card, .color-change {
+        width: 80%;
+        height: auto;
+    }
+}
